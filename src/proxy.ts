@@ -7,7 +7,7 @@ import { NextResponse, type NextRequest } from "next/server";
  *  - authenticated users hitting /login or /signup are sent to /dashboard
  *  - non-super-admin users hitting /admin/* are sent to /dashboard
  */
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request });
 
   const supabase = createServerClient(
